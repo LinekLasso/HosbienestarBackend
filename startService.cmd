@@ -1,0 +1,3 @@
+cd ./target
+ECHO "*INICIANDO MICROSERVICIO HOSBIENESTAR*"
+java -jar restapi-0.0.1-SNAPSHOT.jar
