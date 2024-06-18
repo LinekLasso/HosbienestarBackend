@@ -1,13 +1,5 @@
-FROM maven:3-openjdk-17 AS build
-WORKDIR /app
+FROM amazoncorretto:17-alpine-jdk
 
-COPY . .
-RUN mvn clean package -DskipTests
-
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-
-COPY --from=build /app/target/restapi-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080 
+COPY target/restapi-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT : ["java", "-jar", "./app.jar"]
