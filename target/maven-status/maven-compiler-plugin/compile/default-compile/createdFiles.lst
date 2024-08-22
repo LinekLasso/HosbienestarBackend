@@ -1,5 +1,0 @@
-com\martscompany\restapi\service\UsuarioService.class
-com\martscompany\restapi\repository\UsuarioRepository.class
-com\martscompany\restapi\controller\UsuarioController.class
-com\martscompany\restapi\RestapiApplication.class
-com\martscompany\restapi\model\Usuario.class

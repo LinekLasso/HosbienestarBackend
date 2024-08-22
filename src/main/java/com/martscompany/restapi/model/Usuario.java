@@ -29,7 +29,7 @@ public class Usuario {
 	@Column(name="TELEFONO")
 	String telefono;
 	@Column(name="CONTRASEÑA")
-	String contraseña;
+	String contrasena;
 	
 	public Usuario() {
 		super();
@@ -37,7 +37,7 @@ public class Usuario {
 	}
 
 	public Usuario(Integer idUsuario, String nombres, String apellidos, String numeroIdentificacion, String eps,
-			String email, String telefono, String contraseña) {
+			String email, String telefono, String contrasena) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nombres = nombres;
@@ -46,7 +46,7 @@ public class Usuario {
 		this.eps = eps;
 		this.email = email;
 		this.telefono = telefono;
-		this.contraseña = contraseña;
+		this.contrasena = contrasena;
 	}
 
 	public Integer getIdUsuario() {
@@ -105,12 +105,12 @@ public class Usuario {
 		this.telefono = telefono;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasena() {
+		return contrasena;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 }

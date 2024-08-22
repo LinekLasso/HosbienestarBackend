@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.marscompany.restapi.RestapiApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.780 s -- in com.marscompany.restapi.RestapiApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.473 s -- in com.marscompany.restapi.RestapiApplicationTests

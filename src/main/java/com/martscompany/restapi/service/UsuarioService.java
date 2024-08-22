@@ -33,14 +33,6 @@ public class UsuarioService {
 		}
 		
 		public Usuario registro(Usuario usuario) {
-			Usuario existeUsuario = new Usuario();
-			existeUsuario = this.usuarioRepository.findByNumeroIdentificacion(usuario.getNumeroIdentificacion());
-			if (existeUsuario.getNumeroIdentificacion() != null) {
-				System.out.print("El usuario ya existe");
-				existeUsuario.setNombres("El Usuario ya existe");
-				return existeUsuario;
-			} else {
-				return this.usuarioRepository.save(usuario);
-			}
+			return this.usuarioRepository.save(usuario);			
 		}
 }
