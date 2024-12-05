@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.martscompany.restapi.repository.UsuarioRepository;
+import com.martscompany.restapi.model.RespuestaLogin;
 import com.martscompany.restapi.model.Usuario;
-
-
+import com.martscompany.restapi.DTO.Login;
 
 @Service
 public class UsuarioService {
@@ -35,4 +35,21 @@ public class UsuarioService {
 		public Usuario registro(Usuario usuario) {
 			return this.usuarioRepository.save(usuario);			
 		}
+		
+		
+		public RespuestaLogin login(Login usuarioLogin){
+			Usuario existeUsuario = this.usuarioRepository.findByEmailAndContrasena(usuarioLogin.getEmail(), usuarioLogin.getContrasena());
+			RespuestaLogin respuesta = new RespuestaLogin();
+			if(existeUsuario != null ) {
+				respuesta.setErrores(0);
+				respuesta.setMensaje("login exitoso");
+				respuesta.setUsuario(existeUsuario);
+			}else {
+				respuesta.setErrores(-1);
+				respuesta.setMensaje("correo o contraseña incorrectos");
+			}
+			
+			return respuesta;
+		}
+		
 }
