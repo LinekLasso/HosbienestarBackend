@@ -32,8 +32,18 @@ public class UsuarioService {
 			return this.usuarioRepository.findAll();
 		}
 		
-		public Usuario registro(Usuario usuario) {
-			return this.usuarioRepository.save(usuario);			
+		public RespuestaLogin registro(Usuario usuario) {
+			Usuario existeUsuario = this.usuarioRepository.findByEmailOrNumeroIdentificacion(usuario.getEmail(), usuario.getNumeroIdentificacion());
+			RespuestaLogin respuesta = new RespuestaLogin();
+			if(existeUsuario == null ) {
+				respuesta.setErrores(0);
+				respuesta.setMensaje("Registro exitoso");
+				respuesta.setUsuario(this.usuarioRepository.save(usuario));
+			}else {
+				respuesta.setErrores(-1);
+				respuesta.setMensaje("El usuario ya se encuentra registrado en base de datos");
+			}
+			return respuesta;	
 		}
 		
 		

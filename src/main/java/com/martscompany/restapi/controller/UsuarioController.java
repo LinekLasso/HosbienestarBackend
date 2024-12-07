@@ -39,7 +39,7 @@ public class UsuarioController {
 	}
 	
 	@PostMapping(path = "/registroUsuario")
-	public Usuario registro(@RequestBody Usuario usuario) {
+	public RespuestaLogin registro(@RequestBody Usuario usuario) {
 		return this.usuarioService.registro(usuario);
 	}
 	
